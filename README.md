@@ -1,7 +1,7 @@
 # **INFORME DE INVESTIGACION**
 
 
-assets/image.png
+![assets/image.png](assets/ups-icc.png)
 
 
 ### **Asignatura:** Estructura de Datos
@@ -11,7 +11,6 @@ assets/image.png
 
 # Integrantes:
 - Bryan Orley Santos Rocano - https://github.com/Bosry
-- Nombre Completo 1 - Enlace a GitHub
 
 # Objetivos:
 
@@ -178,9 +177,11 @@ public void ejemplo() {
 
 ### **Explicación resumida**
 
-Este método ejecuta siempre la misma cantidad de operaciones, sin importar el tamaño de la entrada.
-No hay ciclos, llamadas recursivas ni estructuras que dependan de n.
-Por eso su complejidad es O(1), conocida como tiempo constante.
+- El número de operaciones es fijo.
+- No depende del tamaño de un arreglo o lista.
+- Siempre ejecuta las mismas líneas.
+
+## **2.1 Complejidad O(n) – Lineal**
 
 ### **Archivo:** `ComplejidadLineal.java`
 
@@ -197,16 +198,118 @@ public class ComplejidadLineal {
     }
 }
 ```
+### **Explicación resumida**
 
+- Cada elemento requiere una operación.
+- Si hay 100 elementos → se hacen 100 operaciones.
+- Si el arreglo crece, el tiempo crece igual.
 
+## **2.1 Complejidad O(n²) – Cuadratica**
+
+### **Archivo:** `ComplejidadCuadratica.java`
+
+```java
+public class ComplejidadCuadratica {
+    public void ejemplo(int[] numeros){
+        System.out.println("Ejemplo (n^2): ");
+        for (int i = 0; i < numeros.length; i++) {
+            for (int j = 0; j < numeros.length; j++) {
+                System.out.println(numeros[i] + ", " + numeros[j]);
+            }
+        }
+    }
+
+}
+```
+### **Explicación resumida**
+
+- Si el arreglo tiene n elementos, el doble bucle ejecuta n × n = n² operaciones.
+- El tiempo crece mucho más rápido que O(n).
+
+## **2.1 Complejidad O(log n) – Logaritmica**
+
+### **Archivo:** `ComplejidadLogaritmica.java`
+
+```java
+public class ComplejidadLogaritmica {
+    public int ejemplo(int[] numeros, int objetivo) {
+        System.out.println("Ejemplo O(log n)");
+        int inicio = 0;
+        int fin = numeros.length - 1;
+        while (inicio <= fin) {
+            int mid = (inicio + fin) / 2;
+
+            if (numeros[mid] == objetivo) {
+                return mid;
+            } else if (numeros[mid] < objetivo) {
+                inicio = mid + 1;
+            } else {
+                fin = mid - 1;
+            }
+        }
+        return -1;
+    }
+
+}
+```
+### **Explicación resumida**
+
+- Cada iteración reduce los datos a la mitad.
+- No revisa todos los elementos.
+- Aumenta muy lentamente incluso si la entrada es enorme.
+
+## **2.1 Complejidad O(n log n) – N log n**
+
+### **Archivo:** `ComplejidadLinealLogaritmica.java`
+
+```java
+public class ComplejidadLinealLogaritmica {
+    public void ejemplo(int[] numeros){
+        System.out.println("Ejemplo O(n log n):  ");
+        mergeSort(numeros, 0, numeros.length - 1);
+    }
+    private void mergeSort(int[] numeros, int inicio, int fin) {
+        if (inicio < fin) {
+            int mid = (inicio + fin) / 2;
+            mergeSort(numeros, inicio, mid);
+            mergeSort(numeros, mid + 1, fin);
+            merge(numeros, inicio, mid, fin);
+        }
+    }
+    private void merge(int[] numeros, int inicio, int mid, int fin) {
+        int[] temp = new int[fin - inicio + 1];
+        int i = inicio, j = mid + 1, k = 0;
+
+        while (i <= mid && j <= fin) {
+            if (numeros[i] < numeros[j]) {
+                temp[k++] = numeros[i++];
+            } else {
+                temp[k++] = numeros[j++];
+            }
+        }
+        while (i <= mid) temp[k++] = numeros[i++];
+        while (j <= fin) temp[k++] = numeros[j++];
+        for (int m = 0; m < temp.length; m++) {
+            numeros[inicio + m] = temp[m];
+        }
+    }
+}
+```
+### **Explicación resumida**
+
+- El bucle externo recorre n veces.
+- El interno hace log n pasos.
+- Total: n × log n.
 ---
 **PARA CADA COMPLEJIDAD, REPETIR LA ESTRUCTURA ANTERIOR**
 
 
 # **Conclusiones**
 
-*(Aquí el estudiante agrega conclusiones propias del trabajo)*
+- El comprender claramente el funcionamiento y el como crece el tiempo de ejecucion segun la complejidad del algoritmo ayuda mucho a resolver y elegir el tipo de complejidad a usar.
+- Aclaramos que la complejidad logaritmica es la mas eficiente con arreglos grandes, y que el ir probando con codigo es la mejor manera de entender.
 
-**POR ESTUDIANTE**: *(Nombre completo del estudiante)*
+
+**POR ESTUDIANTE**: *Bryan Orley Santos Rocano*
 
 ---
