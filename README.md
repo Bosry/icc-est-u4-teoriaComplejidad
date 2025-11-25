@@ -303,6 +303,26 @@ public class ComplejidadLinealLogaritmica {
 
 ## **2.6 Complejidad O(2ⁿ) – Exponencial**
 
+### **Archivo:** `ComplejidadLinealExponencial.java`
+
+```java
+public class ComplejidadExponencial{
+    public void ejemplo(int n){
+        System.out.println("Ejemplo O(2ⁿ): ");
+        fibonacci(n);
+    }
+    private int fibonacci(int n){
+        if (n <= 1) {
+            return n;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
+```
+### **Explicación resumida**
+
+- La version recursiva de Fibonacci llama dos veces a la misma funcion.
+- Cada nivel del arbol de recursion se duplica, lo que produce un crecimiento explosivo.
 
 ---
 **PARA CADA COMPLEJIDAD, REPETIR LA ESTRUCTURA ANTERIOR**
