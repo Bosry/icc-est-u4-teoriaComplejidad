@@ -7,7 +7,7 @@ public class ComplejidadLinealLogaritmica {
 
     public void ejemplo(int[] numeros){
         System.out.println("Ejemplo O(n log n):  ");
-        mergeSort(numeros, 0, numeros.length);
+        mergeSort(numeros, 0, numeros.length - 1);
     }
 
     private void mergeSort(int[] numeros, int inicio, int fin) {
