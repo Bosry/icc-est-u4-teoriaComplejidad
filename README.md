@@ -181,7 +181,7 @@ public void ejemplo() {
 - No depende del tamaño de un arreglo o lista.
 - Siempre ejecuta las mismas líneas.
 
-## **2.1 Complejidad O(n) – Lineal**
+## **2.2 Complejidad O(n) – Lineal**
 
 ### **Archivo:** `ComplejidadLineal.java`
 
@@ -204,7 +204,7 @@ public class ComplejidadLineal {
 - Si hay 100 elementos → se hacen 100 operaciones.
 - Si el arreglo crece, el tiempo crece igual.
 
-## **2.1 Complejidad O(n²) – Cuadratica**
+## **2.3 Complejidad O(n²) – Cuadratica**
 
 ### **Archivo:** `ComplejidadCuadratica.java`
 
@@ -226,7 +226,7 @@ public class ComplejidadCuadratica {
 - Si el arreglo tiene n elementos, el doble bucle ejecuta n × n = n² operaciones.
 - El tiempo crece mucho más rápido que O(n).
 
-## **2.1 Complejidad O(log n) – Logaritmica**
+## **2.4 Complejidad O(log n) – Logaritmica**
 
 ### **Archivo:** `ComplejidadLogaritmica.java`
 
@@ -258,7 +258,7 @@ public class ComplejidadLogaritmica {
 - No revisa todos los elementos.
 - Aumenta muy lentamente incluso si la entrada es enorme.
 
-## **2.1 Complejidad O(n log n) – N log n**
+## **2.5 Complejidad O(n log n) – N log n**
 
 ### **Archivo:** `ComplejidadLinealLogaritmica.java`
 
@@ -300,6 +300,10 @@ public class ComplejidadLinealLogaritmica {
 - El bucle externo recorre n veces.
 - El interno hace log n pasos.
 - Total: n × log n.
+
+## **2.6 Complejidad O(2ⁿ) – Exponencial**
+
+
 ---
 **PARA CADA COMPLEJIDAD, REPETIR LA ESTRUCTURA ANTERIOR**
 

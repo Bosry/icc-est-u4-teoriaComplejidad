@@ -1,5 +1,6 @@
 import complejidades.ComplejidadConstante;
 import complejidades.ComplejidadCuadratica;
+import complejidades.ComplejidadExponencial;
 import complejidades.ComplejidadLineal;
 import complejidades.ComplejidadLogaritmica;
 
@@ -10,6 +11,7 @@ public class App {
         ComplejidadLineal complejidadLin = new ComplejidadLineal();
         ComplejidadCuadratica complejidadCua = new ComplejidadCuadratica();
         ComplejidadLogaritmica complejidadLog = new ComplejidadLogaritmica();
+        ComplejidadExponencial complejidadExp = new ComplejidadExponencial();
 
         int objetivo = 12;
 
@@ -17,5 +19,6 @@ public class App {
         complejidadLin.ejemplo(numeros);
         complejidadCua.ejemplo(numeros);
         complejidadLog.ejemplo(numeros, objetivo);
+        complejidadExp.ejemplo(objetivo);
     }
 }
